@@ -1,0 +1,26 @@
+{
+  "name": "librepos-server",
+  "version": "0.0.1",
+  "description": "The backend server for LibrePOS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LibrePOS/server.git"
+  },
+  "author": "IronVeil <git@ironveil.cloud>",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/LibrePOS/server/issues"
+  },
+  "homepage": "https://github.com/LibrePOS/server#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
