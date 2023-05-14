@@ -1,2 +1,2 @@
-# server
-The backend server for LibrePOS
+# LibrePOS Server
+This is the backend server for LibrePOS
