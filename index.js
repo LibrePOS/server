@@ -1,6 +1,6 @@
 // --- index.js ---
 // Entrypoint for the backend server
-// Version: v0.0.1
+// Version: v1.0.0
 
 
 // --- SETUP ---
@@ -12,16 +12,20 @@ const app = express()
 // Setup .env variables
 require("dotenv").config()
 
-const PORT = process.env.PORT
-const VERSION = process.env.VERSION
+const PORT = process.env.PORT || 80
+const VERSION = "v1.0.0"
 
 
 // --- API ---
 
 // Get version
 app.get("/version", (req, res) => {
-    res.send(VERSION)
+    res.send(VERSION.substring(1).split("."))
 })
+
+// API v1
+app.use("/api/v1", require("./api/v1"))
+
 
 
 // --- RUN ---
