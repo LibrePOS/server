@@ -28,13 +28,26 @@ const client = new Client({
 // --- SUBROUTINES ---
 
 // Init the database
-function init() {
-    client.connect()
-    client.query("SELECT * FROM test1;", (err, res) => {
-        if (err) return err
-        console.log(res)
-        return res
-    })
+async function init() {
+    await client.connect()
+
+    await client.query(`CREATE TABLE IF NOT EXISTS users (
+                                                            username TEXT UNIQUE NOT NULL,
+                                                            password TEXT NOT NULL
+                                                        );`)
+    return 200
 }
 
-module.exports = { init }
+// Delete the database
+async function drop() {
+    await client.query("DROP TABLE users;")
+    return 200
+}
+
+// Run command
+async function run(command) {
+    let query = await client.query(command)
+    return query
+}
+
+module.exports = { init, drop, run }

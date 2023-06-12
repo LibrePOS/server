@@ -1,5 +1,5 @@
 // --- v1.js ---
-// Main entypoint for v1 of the API
+// Main entrypoint for v1 of the API
 
 
 // --- SETUP ---
@@ -7,6 +7,9 @@
 // Setup express
 const express = require("express")
 const router = express.Router()
+
+// Setup db
+require("./v1/db").init()
 
 
 // --- ROUTES ---
